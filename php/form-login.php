@@ -14,9 +14,9 @@
 <body>
     <!-- ini perubahan -->
     <!-- memasukkan gambar pada halaman web -->
-    <div class="image">
+    <!-- <div class="image">
         <img class="logo" src="logo_upn.png" alt="">
-    </div>
+    </div> -->
     <!-- membuat box login -->
     <div class="box">
         <!-- berfungsi untuk membuat isi dari box atau card login -->
