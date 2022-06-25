@@ -11,7 +11,7 @@
     $sheet->setCellValue('C1','Kelas');
     $sheet->setCellValue('D1','Alamat');
 
-    $query = mysqli_query($conn, "SELECT * from tb_siswa");
+    $query = mysqli_query($conn, "SELECT * from tb_produk");
     $i = 2;
     $no = 1;
     while($row = mysqli_fetch_array($query)){
