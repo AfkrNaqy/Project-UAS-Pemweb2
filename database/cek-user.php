@@ -11,6 +11,7 @@
     if (isset($_POST['submit'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
+        // $role = $_POST['role'];
         // mengambil data dari tabel yang telah dibuat pada database myweb 
         // yang telah dibuat sebelumnya
         $sql = "SELECT * FROM tb_user WHERE username='$username' AND password='$password'";
@@ -22,7 +23,8 @@
             $_SESSION['username'] = $row['username'];
             // mengalihkan pada file beranda_page.php ketika username dan password
             // benar atau username dan password sama dengan yang ada di database
-            header("Location: /adm-home.php");
+            header("Location: ../adm-home.php");
+            exit();
         } else {
             // memberikan pesan alert ketika user memasukkan username atau password yang salah
             echo "<script>alert('Username atau password Anda salah. Silahkan coba lagi!')</script>";
