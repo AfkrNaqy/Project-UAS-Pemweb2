@@ -28,8 +28,9 @@
                         <!-- === NAMA PRODUK === -->
                         <div class="form-group row mb-3">
                             <label for="nama_produk" class="col-sm-3 col-form-label">Nama Produk</label>
-                            <div class="col-sm-9"><input required type="text" name="nama_produk" class="form-control" id="nama_produk"
-                                    placeholder="Nama Produk" value="" /> <span class="warning"></span></div>
+                            <div class="col-sm-9"><input required type="text" name="nama_produk" class="form-control"
+                                    id="nama_produk" placeholder="Nama Produk" value="" /> <span class="warning"></span>
+                            </div>
                         </div>
 
                         <!-- === HARGA -->
@@ -43,9 +44,7 @@
                         <div class="form-group row mb-3">
                             <label for="jumlah_stok" class="col-sm-3 col-form-label">Jumlah Stok</label>
                             <div class="col-sm-9"><input required type="text" name="jumlah_stok" class="form-control"
-                                    id="jumlah_stok" placeholder="Jumlah Stok" value="" /> <span class="warning"></span></div>
-                        </div>
-                                </select>
+                                    id="jumlah_stok" placeholder="Jumlah Stok" value="" /> <span class="warning"></span>
                             </div>
                         </div>
 
