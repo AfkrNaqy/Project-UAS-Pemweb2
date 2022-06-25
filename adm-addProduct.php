@@ -41,9 +41,9 @@
 
                         <!-- === JUMLAH STOK -->
                         <div class="form-group row mb-3">
-                            <label for="jumlah_produk" class="col-sm-3 col-form-label">Jumlah Stok</label>
-                            <div class="col-sm-9"><input required type="text" name="jumlah_produk" class="form-control"
-                                    id="jumlah_produk" placeholder="Jumlah Produk" value="" /> <span class="warning"></span></div>
+                            <label for="jumlah_stok" class="col-sm-3 col-form-label">Jumlah Stok</label>
+                            <div class="col-sm-9"><input required type="text" name="jumlah_stok" class="form-control"
+                                    id="jumlah_stok" placeholder="Jumlah Stok" value="" /> <span class="warning"></span></div>
                         </div>
                                 </select>
                             </div>
