@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <!-- P -->
     <!-- ini untuk navbar -->
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
