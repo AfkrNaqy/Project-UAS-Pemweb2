@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FORM REGISTRASI</title>
+    <title>Tambah Product</title>
     <!-- CSS only -->
     <!-- link berfungsi untuk mengimport library dari bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -21,52 +21,30 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card mt-4">
-                <div class="card-header text-center bg-primary">SIGN UP</div>
+                <div class="card-header text-center bg-primary">TAMBAH PRODUK</div>
                 <div class="card-body">
                     <!-- pembuatan form yang digunakan untuk memasukkan data -->
-                    <form action="database/input-user.php" method="POST">
-                        <!-- === FORM NAMA === -->
+                    <form action="database/input-produk.php" method="POST">
+                        <!-- === NAMA PRODUK === -->
                         <div class="form-group row mb-3">
-                            <label for="name" class="col-sm-3 col-form-label">Nama</label>
-                            <div class="col-sm-9"><input required type="text" name="name" class="form-control" id="name"
-                                    placeholder="Name" value="" /> <span class="warning"></span></div>
+                            <label for="nama_produk" class="col-sm-3 col-form-label">Nama Produk</label>
+                            <div class="col-sm-9"><input required type="text" name="nama_produk" class="form-control" id="nama_produk"
+                                    placeholder="Nama Produk" value="" /> <span class="warning"></span></div>
                         </div>
 
-                        <!-- === ALAMAT -->
+                        <!-- === HARGA -->
                         <div class="form-group row mb-3">
-                            <label for="address" class="col-sm-3 col-form-label">Address</label>
-                            <div class="col-sm-9"><input required type="text" name="address" class="form-control"
-                                    id="address" placeholder="Address" value="" /> <span class="warning"></span></div>
+                            <label for="harga" class="col-sm-3 col-form-label">Harga</label>
+                            <div class="col-sm-9"><input required type="text" name="harga" class="form-control"
+                                    id="harga" placeholder="Harga" value="" /> <span class="warning"></span></div>
                         </div>
 
-                        <!-- === EMAIL -->
+                        <!-- === JUMLAH STOK -->
                         <div class="form-group row mb-3">
-                            <label for="email" class="col-sm-3 col-form-label">Email</label>
-                            <div class="col-sm-9"><input required type="text" name="email" class="form-control"
-                                    id="email" placeholder="Email" value="" /> <span class="warning"></span></div>
+                            <label for="jumlah_produk" class="col-sm-3 col-form-label">Jumlah Stok</label>
+                            <div class="col-sm-9"><input required type="text" name="jumlah_produk" class="form-control"
+                                    id="jumlah_produk" placeholder="Jumlah Produk" value="" /> <span class="warning"></span></div>
                         </div>
-                        <!-- === FORM USERNAME === -->
-                        <div class="form-group row mb-3">
-                            <label for="username" class="col-sm-3 col-form-label">Username</label>
-                            <div class="col-sm-9"><input required type="text" name="username" class="form-control"
-                                    id="username" placeholder="Username" value="" /> <span class="warning"></span></div>
-                        </div>
-
-                        <!-- === FORM PASSWORD === -->
-                        <div class="form-group row mb-3">
-                            <label for="password" class="col-sm-3 col-form-label">Password</label>
-                            <div class="col-sm-9"><input required type="text" name="password" class="form-control"
-                                    id="password" placeholder="Password" value="" /> <span class="warning"></span></div>
-                        </div>
-
-                        <!-- === FORM ROLE === -->
-                        <div class="form-group row mb-3">
-                            <label for="role" class="col-sm-3">Role</label>
-                            <div class="col-sm-3">
-                                <select name="role" class="form-select form-select-sm " id="role"
-                                    aria-label=".form-select-lg example">
-                                    <option value="Admin">Admin</option>
-                                    <option value="Cashier">Cashier</option>
                                 </select>
                             </div>
                         </div>

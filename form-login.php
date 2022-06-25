@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <!-- ini perubahan -->
+
     <!-- memasukkan gambar pada halaman web -->
     <!-- <div class="image">
         <img class="logo" src="logo_upn.png" alt="">

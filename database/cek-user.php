@@ -12,7 +12,7 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
         // $role = $_POST['role'];
-        // mengambil data dari tabel yang telah dibuat pada database myweb 
+        // mengambil data dari tabel yang telah dibuat pada database my_db 
         // yang telah dibuat sebelumnya
         $sql = "SELECT * FROM tb_user WHERE username='$username' AND password='$password'";
         $result = mysqli_query($conn, $sql);

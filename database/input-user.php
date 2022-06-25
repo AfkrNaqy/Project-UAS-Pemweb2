@@ -3,20 +3,14 @@
 include "connect.php";
 
 //memindahkan nilai data form ke variabel sederhana agar mudah ditulis
-$nama=$_POST['name'];
-$address=$_POST['address'];
-$email=$_POST['email'];
-$role= $_POST['role'];
-$username=$_POST['username'];
-$pass=$_POST['password'];
+$nama_produk=$_POST['nama_produk'];
+$harga=$_POST['harga'];
+$jumlah_produk=$_POST['jumlah_produk'];
 
 // perintah untuk memasukkan kedalam database
-$sql ="INSERT INTO tb_user SET name='$nama',
-address='$address',
-email='$email',
-role='$role',
-username='$username',
-password='$pass'";
+$sql ="INSERT INTO tb_produk SET nama_produk='$nama_produk',
+harga='$harga',
+jumlah_produk='$jumlah_produk'";
 
 // melakukan perintah sekaligus mengecek apakah data berhasil dieksekusi
 // dan masuk ke dalam database atau tidak

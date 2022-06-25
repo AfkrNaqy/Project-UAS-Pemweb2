@@ -12,7 +12,7 @@ if(!$conn){
 die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "CREATE DATABASE db_market";
+$sql = "CREATE DATABASE my_db";
 if(mysqli_query($conn, $sql)){
     echo "Database created successfully";
 }else{
