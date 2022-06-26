@@ -18,6 +18,7 @@
 </style>
 
 <body class="bg-warning">
+    <?php include "adm-navigation.php" ?>
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card mt-4">
@@ -33,19 +34,19 @@
                             </div>
                         </div>
 
-                        <!-- === HARGA -->
-                        <div class="form-group row mb-3">
-                            <label for="harga" class="col-sm-3 col-form-label">Harga</label>
-                            <div class="col-sm-9"><input required type="text" name="harga" class="form-control"
-                                    id="harga" placeholder="Harga" value="" /> <span class="warning"></span></div>
-                        </div>
-
                         <!-- === JUMLAH STOK -->
                         <div class="form-group row mb-3">
                             <label for="jumlah_stok" class="col-sm-3 col-form-label">Jumlah Stok</label>
                             <div class="col-sm-9"><input required type="text" name="jumlah_stok" class="form-control"
                                     id="jumlah_stok" placeholder="Jumlah Stok" value="" /> <span class="warning"></span>
                             </div>
+                        </div>
+
+                        <!-- === HARGA -->
+                        <div class="form-group row mb-3">
+                            <label for="harga" class="col-sm-3 col-form-label">Harga</label>
+                            <div class="col-sm-9"><input required type="text" name="harga" class="form-control"
+                                    id="harga" placeholder="Harga" value="" /> <span class="warning"></span></div>
                         </div>
 
                         <div class="form-group row">

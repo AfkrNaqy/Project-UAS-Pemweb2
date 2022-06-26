@@ -14,14 +14,17 @@
     <div class="act"></div>
     <!-- ini untuk tabel product -->
     <div class="table table-hover">
-        <h2>Produk</h2>
+        <h2>Daftar User</h2>
         <table class="table">
             <thead>
                 <tr>
                     <td scope="col">ID</td>
-                    <td scope="col">Nama Produk</td>
-                    <td scope="col">Jumlah Produk</td>
-                    <td scope="col">Harga Produk</td>
+                    <td scope="col">Nama</td>
+                    <td scope="col">Alamat</td>
+                    <td scope="col">Email</td>
+                    <td scope="col">Role</td>
+                    <td scope="col">Username</td>
+                    <td scope="col">Password</td>
                     <td scope="col">Tindakan</td>
                 </tr>
             </thead>
@@ -29,16 +32,19 @@
                 <?php
             include "database/connect.php";
 
-            $query = mysqli_query($conn, 'SELECT * FROM tb_produk');
+            $query = mysqli_query($conn, 'SELECT * FROM tb_user');
             while ($data = mysqli_fetch_array($query)) {
             ?>
                 <tr>
-                    <td><?php echo $data['id_produk'] ?></td>
-                    <td><?php echo $data['nama_produk'] ?></td>
-                    <td><?php echo $data['jumlah_stok'] ?></td>
-                    <td><?php echo 'RP. '.$data['harga'] ?></td>
-                    <td class="update"><a href="adm-updateProduct.php?id_produk=<?php echo $data['id_produk']; ?>">Update |</a>
-                        <a href="adm-deleteProduct.php?id_produk=<?php echo $data['id_produk']; ?>">| Hapus</a>
+                    <td><?php echo $data['id_user'] ?></td>
+                    <td><?php echo $data['name'] ?></td>
+                    <td><?php echo $data['address'] ?></td>
+                    <td><?php echo $data['email'] ?></td>
+                    <td><?php echo $data['role'] ?></td>
+                    <td><?php echo $data['username'] ?></td>
+                    <td><?php echo $data['password'] ?></td>
+                    <td class="update"><a href="adm-updateProduct.php?id_user=<?php echo $data['id_user']; ?>">Update |</a>
+                        <a href="adm-deleteProduct.php?id_user=<?php echo $data['id_user']; ?>">| Hapus</a>
                     </td>
                 </tr>
                 <?php 
