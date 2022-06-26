@@ -43,8 +43,11 @@
                     <td><?php echo $data['role'] ?></td>
                     <td><?php echo $data['username'] ?></td>
                     <td><?php echo $data['password'] ?></td>
-                    <td class="update"><a href="adm-updateProduct.php?id_user=<?php echo $data['id_user']; ?>">Update |</a>
-                        <a href="adm-deleteProduct.php?id_user=<?php echo $data['id_user']; ?>">| Hapus</a>
+                    <td class="update">
+                        <a class="btn btn-primary"
+                        href="adm-updateUser.php?id_user=<?php echo $data['id_user']; ?>">Update</a>
+                        <a class="btn btn-primary" 
+                        href="database/delete-user.php?id_user=<?php echo $data['id_user']; ?>">Hapus</a>
                     </td>
                 </tr>
                 <?php 
@@ -53,8 +56,6 @@
             </tbody>
         </table>
     </div>
-
-    <a href="adm-addProduct.php" class="btn btn-primary">Tambah Data</a>
 </body>
 
 </html>

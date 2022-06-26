@@ -51,9 +51,9 @@
                     <td><?php echo 'RP. '.$data['harga'] ?></td>
                     <td class="update">
                         <a class="btn btn-primary"
-                            href="update.php?id_produk=<?php echo $data['id_produk']; ?>">Update</a>
+                            href="adm-updateProduct.php?id_produk=<?php echo $data['id_produk']; ?>">Update</a>
                         <a class="btn btn-primary"
-                            href="deleteAct.php?id_produk=<?php echo $data['id_produk']; ?>">Hapus</a>
+                            href="database/delete-produk.php?id_produk=<?php echo $data['id_produk']; ?>">Hapus</a>
                     </td>
                 </tr>
                 <?php 
