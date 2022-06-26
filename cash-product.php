@@ -14,7 +14,7 @@
 
 <body>
     <!-- ini import navbar -->
-    <?php include "adm-navigation.php" ?>
+    <?php include "cash-navigation.php" ?>
     <!-- ini untuk tombol search dll -->
     <div class="act"></div>
     <!-- ini untuk searach dan button tambah -->
@@ -30,7 +30,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <td scope="col">ID</td>
+                    <td scope="col">No</td>
                     <td scope="col">Nama Produk</td>
                     <td scope="col">Jumlah Produk</td>
                     <td scope="col">Harga Produk</td>
@@ -49,15 +49,11 @@
                     <td><?php echo $data['nama_produk'] ?></td>
                     <td><?php echo $data['jumlah_stok'] ?></td>
                     <td><?php echo 'RP. '.$data['harga'] ?></td>
-                    <td class="update">
-                        <!-- <a class="btn btn-primary"
-                            href="update-product.php?id_produk=<?php echo $data['id_produk']; ?>"><img
-                                src="img\lucide_pencil.svg" alt="">
-                        </a> -->
+                    <td class="add">
                         <a class="btn btn-primary"
-                            href="delete-produk.php?id_produk=<?php echo $data['id_produk']; ?>"><img
-                                src="img\octicon_trash-16.svg" alt="">
-                        </a>
+                            href="database\temp-produk.php?id_produk=<?php echo $data['id_produk']; ?>"><img
+                                src="img\lucide_pencil.svg" alt=""></a>
+
                     </td>
                 </tr>
                 <?php 
@@ -67,7 +63,6 @@
         </table>
     </div>
 
-    <a href="adm-addProduct.php" class="btn btn-primary">Tambah Data</a>
 </body>
 
 </html>

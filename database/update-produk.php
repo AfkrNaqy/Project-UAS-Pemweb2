@@ -8,4 +8,5 @@
     
     mysqli_query($conn, "UPDATE tb_produk SET nama_produk='$nama_produk', harga='$harga', jumlah_stok='$jumlah_stok' WHERE id_produk = $id_produk");
     header("location:../adm-product.php");
+    exit();
 ?>
