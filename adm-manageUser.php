@@ -25,7 +25,7 @@
                     <td scope="col">Role</td>
                     <td scope="col">Username</td>
                     <td scope="col">Password</td>
-                    <td scope="col">Tindakan</td>
+                    <td scope="col">Action</td>
                 </tr>
             </thead>
             <tbody>
@@ -45,9 +45,11 @@
                     <td><?php echo $data['password'] ?></td>
                     <td class="update">
                         <a class="btn btn-primary"
-                        href="adm-updateUser.php?id_user=<?php echo $data['id_user']; ?>">Update</a>
-                        <a class="btn btn-primary" 
-                        href="database/delete-user.php?id_user=<?php echo $data['id_user']; ?>">Hapus</a>
+                            href="adm-updateUser.php?id_user=<?php echo $data['id_user']; ?>"><img
+                                src="img\lucide_pencil.svg" alt=""></a>
+                        <a class="btn btn-primary"
+                            href="database/delete-user.php?id_user=<?php echo $data['id_user']; ?>"><img
+                                src="img\octicon_trash-16.svg" alt=""></a>
                     </td>
                 </tr>
                 <?php 

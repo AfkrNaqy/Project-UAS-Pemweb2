@@ -34,7 +34,7 @@
                     <td scope="col">Nama Produk</td>
                     <td scope="col">Jumlah Produk</td>
                     <td scope="col">Harga Produk</td>
-                    <td scope="col">Tindakan</td>
+                    <td scope="col">Action</td>
                 </tr>
             </thead>
             <tbody>
@@ -51,10 +51,10 @@
                     <td><?php echo 'RP. '.$data['harga'] ?></td>
                     <td class="update">
                         <a class="btn btn-primary"
-                            href="update-product.php?id_produk=<?php echo $data['id_produk']; ?>"><img
+                            href="adm-updateProduct.php?id_produk=<?php echo $data['id_produk']; ?>"><img
                                 src="img\lucide_pencil.svg" alt=""></a>
                         <a class="btn btn-primary"
-                            href="delete-produk.php?id_produk=<?php echo $data['id_produk']; ?>"><img
+                            href="database/delete-produk.php?id_produk=<?php echo $data['id_produk']; ?>"><img
                                 src="img\octicon_trash-16.svg" alt=""></a>
                     </td>
                 </tr>
