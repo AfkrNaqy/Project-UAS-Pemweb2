@@ -6,10 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tambah Product</title>
-    <!-- CSS only -->
-    <!-- link berfungsi untuk mengimport library dari bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+
 </head>
 <style>
 .warning {
@@ -18,6 +15,7 @@
 </style>
 
 <body class="bg-warning">
+    <?php include "adm-navigation.php" ?>
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card mt-4">
@@ -52,7 +50,7 @@
                             <div class="col-sm-9">
                                 <!-- tombol submit untuk melakukan perintah selanjutnya yaitu dialihkan
                                 ke file php untuk memasukkan data ke dalam database -->
-                                <button type="submit" class="btn btn-primary">Registrasi</button>
+                                <button type="submit" class="btn btn-primary">Add</button>
                             </div>
                         </div>
                     </form>
