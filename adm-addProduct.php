@@ -14,7 +14,7 @@
 }
 </style>
 
-<body class="bg-warning">
+<body>
     <?php include "adm-navigation.php" ?>
     <div class="row justify-content-center">
         <div class="col-md-6">

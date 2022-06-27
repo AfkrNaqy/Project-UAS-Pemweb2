@@ -15,16 +15,29 @@
 .warning {
     color: #ff0000;
 }
+
+.body {
+    background: #e4e6c3;
+}
+
+.card {
+    background: #899878;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+.btn-regis {
+    background: #f7f7f2;
+}
 </style>
 
-<body class="bg-warning">
+<body class="body">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <div class="card mt-4">
-                <div class="card-header text-center bg-primary">SIGN UP</div>
-                <div class="card-body">
+            <div class="card mt-4 rounded-4 p-2">
+                <div class="card-body text-light">
                     <!-- pembuatan form yang digunakan untuk memasukkan data -->
                     <form action="database/input-user.php" method="POST">
+                        <h2 class="text-center mb-4">SIGN UP</h2>
                         <!-- === FORM NAMA === -->
                         <div class="form-group row mb-3">
                             <label for="name" class="col-sm-3 col-form-label">Nama</label>
@@ -75,7 +88,7 @@
                             <div class="col-sm-9">
                                 <!-- tombol submit untuk melakukan perintah selanjutnya yaitu dialihkan
                                 ke file php untuk memasukkan data ke dalam database -->
-                                <button type="submit" class="btn btn-primary">Registrasi</button>
+                                <button type="submit" class="btn btn-light p-2">Sign Up</button>
                             </div>
                         </div>
                     </form>

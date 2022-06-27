@@ -1,8 +1,8 @@
-body {
+.body {
   margin: 50px;
   padding: 0;
   display: transparent;
-  background: #000000;
+  background: #e4e6c3;
   justify-content: space-between;
   align-items: center;
   height: 120vh;
@@ -73,7 +73,7 @@ ul li a:hover:before {
   transform: translate(-50%, -50%);
   width: 400px;
   padding: 40px;
-  background: #545c52;
+  background: #899878;
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
@@ -113,15 +113,15 @@ ul li a:hover:before {
 .box .inputBox input:valid ~ label {
   top: -18px;
   left: 0;
-  color: #808080;
+  color: #fff;
   font-size: 12px;
 }
 .box input[type="submit"] {
   background: transparent;
   border: none;
   outline: none;
-  color: #fff;
-  background: #c4b7cb;
+  color: rgb(0, 0, 0);
+  background: #f7f7f2;
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
