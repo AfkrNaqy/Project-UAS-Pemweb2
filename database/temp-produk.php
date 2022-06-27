@@ -15,7 +15,7 @@ if (count($produk)!=null || count($jumlah)!=null || count($harga)!=null) {
     $jumlah = array($data['jumlah_stok']);
     $harga = array($data['harga']);
     echo "tambah berhasil";
+    // header("Location: ../cash-home.php");
 }
-header("Location: ../cash-home.php");
 // exit();
 ?>
