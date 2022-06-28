@@ -11,7 +11,7 @@
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
 </head>
 
-<body>
+<body class="body">
 
     <!-- memasukkan gambar pada halaman web -->
     <!-- <div class="image">
@@ -36,7 +36,7 @@
             </div>
             <div class="form-group row mb-3">
                 <div class="col-sm-5">
-                    <select name="role" class="form-select form-select-sm bg-tranparent" id="role"
+                    <select name="role" class="form-select form-select-sm " id="role"
                         aria-label=".form-select-lg example">
                         <option value="Admin">Admin</option>
                         <option value="Cashier">Cashier</option>
