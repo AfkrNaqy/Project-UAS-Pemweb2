@@ -27,7 +27,8 @@
     <?php include "adm-navigation.php" ?>
     <section class="Product">
         <h4>PRODUCT</h4>
-        <div class="canvas"></div>
+        <?php include "chart\chart-bar.php"; ?>
+
     </section>
     <section class="Payment">
         <h4>PAYMENT</h4>
