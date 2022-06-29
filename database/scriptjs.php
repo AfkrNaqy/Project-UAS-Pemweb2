@@ -75,8 +75,13 @@ function addProduk() {
     //   }
     var vstok =
         <?php 
+<<<<<<< HEAD
             $stok = "SELECT jumlah_stok FROM tb_produk WHERE id_produk =". $data['id_produk'];
             echo "$stok";
+=======
+
+            $stok = "SELECT jumlah_stok FROM tb_produk WHERE id_produk =";
+>>>>>>> 51f289bdd82c6d059bcb04bc5c09587b8d69f824
         ?>;
 
     var hargaTotal = hitungTotal(hargaProduk, jmlBeli);
