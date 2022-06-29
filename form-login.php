@@ -13,14 +13,28 @@
 
 <body class="body">
 
-    <!-- memasukkan gambar pada halaman web -->
-    <!-- <div class="image">
-        <img class="logo" src="logo_upn.png" alt="">
-    </div> -->
+<?php
+    if(isset($_GET['pesan'])){
+        if($_GET['pesan'] == "gagal"){
+            echo "<div class='alert alert-warning'>
+                <center>Login gagal! Periksa kembali username atau password anda</center>
+                </div>";
+            echo "<br>";
+        }else if($_GET['pesan'] == "logout"){
+            echo "<div class='alert alert-warning'>
+                <center>Anda telah berhasil logout</center>
+                </div>";
+        }else if($_GET['pesan'] == "belum_login"){
+            echo "Anda harus login untuk mengakses halaman admin";
+        }
+    }
+?>
+
     <!-- membuat box login -->
     <div class="box">
         <!-- berfungsi untuk membuat isi dari box atau card login -->
         <h2>LOGIN</h2>
+
         <!-- membuat form login yang terhubung dengan file php cem-user.php untuk melakukan
         perintah -->
         <form method="post" action="database/cek-user.php">
