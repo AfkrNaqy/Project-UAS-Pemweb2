@@ -1,7 +1,7 @@
 <?php
 //integrasi koneksi
 include '../database/connect.php';
-include '../adm-navigation.php';
+
 //membuat variabel penampung data tabel
 $produk = mysqli_query($conn, "SELECT * FROM tb_produk");
 while ($data = mysqli_fetch_array($produk)) {
@@ -21,15 +21,8 @@ while ($data = mysqli_fetch_array($produk)) {
 	<script type="text/javascript" src="Chart.js"></script>
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ed8937;">
-  		<div class="container-fluid">
-    		<a class="navbar-brand" href="laporan.php">
-    		<img src="img/logo-navbar.png"
-    		height="48">
-    		</a>
-		</div>
-	</nav><br>
-	<!--pengaturan tampilan bar dan pembuatan id chart-->
+	<?php include '../adm-navigation.php';?>
+	<!--pengaturan tampilan chart-->
 	<div class="align-content-center" style="width: 800px; height: 800px; position: relative; left: 20%;">
 		<canvas id="myChart"></canvas>
 	</div>
@@ -37,12 +30,13 @@ while ($data = mysqli_fetch_array($produk)) {
 	<script>
 		var ctx = document.getElementById("myChart").getContext('2d');
 		var myChart = new Chart (ctx, {
+			//memilih tipe chart
 			type: 'doughnut',
 			data: {
 				//membuat label
 				labels: <?php echo json_encode($nama_produk);?>,
 				datasets: [{
-					//grafik untuk total kasus
+					//grafik jumlah pembelian
 					label: '',
 					data:<?php echo json_encode($jumlah); ?>,
 					backgroundColor: [
