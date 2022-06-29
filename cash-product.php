@@ -54,7 +54,7 @@
                     <input type="hidden" name="id_produk" value="<?php echo $data['id_produk']; ?>">
                     <input type="hidden" name="harga" value="<?php echo $data['harga']; ?>">
                     <td class="inputJml" id="jmlBeli">
-                        <span><input type="number" name="jumlah" id="jumlah" class="num" value="0" min="0"></span>
+                        <span><input type="number" name="jumlah" id="jumlah" class="num" value="0" min="0" max="<?php echo $data['jumlah_stok'] ?>"></span>
                     </td>
                     <td id="hargaProduk"><?php echo 'RP. '.$data['harga'] ?></td>
                     <td class="add">
