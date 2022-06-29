@@ -23,8 +23,5 @@ $result = mysqli_query($conn, $sql);
         mysqli_query($conn, $query);
     }
 
-// melakukan perintah sekaligus mengecek apakah data berhasil dieksekusi
-// dan masuk ke dalam database atau tidak
-
 header("location:../cash-home.php");
 ?>
