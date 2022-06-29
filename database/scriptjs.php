@@ -2,7 +2,7 @@
 include "connect.php";
 
 $sql = "SELECT jumlah_stok FROM tb_produk";
-$stok = mysqli_query($conn,$sql);
+$data = mysqli_fetch_array($conn, $query);
 ?>
 
 <script>
@@ -43,10 +43,10 @@ function tambahRiwayat(buah, jumlah, harga, kualitas) {
     td.appendChild(item);
     tr.appendChild(td);
 
-    var td = document.createElement("td");
-    var item = document.createTextNode(getDate());
-    td.appendChild(item);
-    tr.appendChild(td);
+    // var td = document.createElement("td");
+    // var item = document.createTextNode(getDate());
+    // td.appendChild(item);
+    // tr.appendChild(td);
 
     document.getElementById("list-transaksi").innerHTML += tr.outerHTML;
 }
@@ -73,23 +73,23 @@ function addProduk() {
     //   } else {
     //     diskon = 0;
     //   }
-    var stok =
+    var vstok =
         <?php 
-            $inputID = inputId;
-            $stok = "SELECT jumlah_stok FROM tb_produk WHERE id_produk =";
+            $stok = "SELECT jumlah_stok FROM tb_produk WHERE id_produk =". $data['id_produk'];
+            echo "$stok";
         ?>;
 
     var hargaTotal = hitungTotal(hargaProduk, jmlBeli);
     //   var sisa = hitungKembalian(uang, hargaTotal);
 
-    if (sisa > 0 && hargaTotal > 0) {
+    if (vstok > 0 && hargaTotal > 0) {
         if (cekStok(posisi, jmlBeli)) {
             tambahRiwayat(namaProduk, jmlBeli, hargaTotal);
             kurangData(posisi, jmlBeli);
         } else {
             alert("Stok buah tidak cukup");
         }
-    } else if (sisa == 0 && hargaTotal > 0) {
+    } else if (vstok == 0 && hargaTotal > 0) {
         if (cekStok(posisi, jmlBeli)) {
             alert("Transaksi berhasil");
             tambahRiwayat(namaProduk, jmlBeli, hargaTotal);
