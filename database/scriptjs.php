@@ -75,7 +75,7 @@ function addProduk() {
     //   }
     var stok =
         <?php 
-            $inputID = inputId;
+
             $stok = "SELECT jumlah_stok FROM tb_produk WHERE id_produk =";
         ?>;
 

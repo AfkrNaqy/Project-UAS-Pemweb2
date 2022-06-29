@@ -39,6 +39,7 @@
                 </tr>
             </thead>
             <tbody>
+
                 <?php
             include "database/connect.php";
 
@@ -46,15 +47,20 @@
             while ($data = mysqli_fetch_array($query)) {
             ?>
                 <tr>
-                    <td id="idProduk"><?php echo $data['id_produk'] ?></td>
+                    <td id="id_produk"><?php echo $data['id_produk'] ?></td>
                     <td id="namaProduk"><?php echo $data['nama_produk'] ?></td>
+
+                    <form action="database/input-temporary.php" method="POST">
+                    <input type="hidden" name="id_produk" value="<?php echo $data['id_produk']; ?>">
+                    <input type="hidden" name="harga" value="<?php echo $data['harga']; ?>">
                     <td class="inputJml" id="jmlBeli">
-                        <span><input type="number" class="num" value="0" min="0"></span>
+                        <span><input type="number" name="jumlah" id="jumlah" class="num" value="0" min="0"></span>
                     </td>
                     <td id="hargaProduk"><?php echo 'RP. '.$data['harga'] ?></td>
                     <td class="add">
-                        <a class="btn btn-primary" onclick="addProduk()"><img src="img\lucide_pencil.svg" alt=""></a>
+                    <button type="submit" class="btn btn-primary">Update</button>
                     </td>
+                    </form>
                 </tr>
                 <?php 
         }

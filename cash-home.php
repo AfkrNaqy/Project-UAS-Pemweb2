@@ -18,8 +18,9 @@
                 <tr>
                     <td scope="col">No</td>
                     <td scope="col">Nama Produk</td>
-                    <td scope="col">Jumlah Produk</td>
+                    <td scope="col">Jumlah</td>
                     <td scope="col">Harga Produk</td>
+                    <td scope="col">Total Harga</td>
                     <td scope="col">Tindakan</td>
                 </tr>
             </thead>
@@ -27,17 +28,26 @@
                 <?php
             include "database/connect.php";
 
-            // $query = mysqli_query($conn, 'SELECT * FROM tb_produk');
-            for ($i=0; $i < count($produk); $i++) { 
-                # code...
-                ?>
+            $no=1;
+            $query = mysqli_query($conn, 'SELECT * FROM tb_temporary');
+            while ($data = mysqli_fetch_array($query)) {
+                $id_produk = $data['id_produk'];
+                $jumlah = $data['jumlah'];
+                $total_harga = $data['total_harga'];
+                $sql = mysqli_query($conn, "SELECT nama_produk, harga FROM tb_produk WHERE id_produk='".$data['id_produk']."'");
+                $data = $sql->fetch_array();
+                $nama_produk = $data['nama_produk'];
+                $harga = $data['harga'];
+            ?>
                 <tr>
-                    <td><?php echo $produk[$i] ?></td>
-                    <td><?php echo $jumlah[$i] ?></td>
-                    <td><?php echo 'RP. '.$harga[$i] ?></td>
+                    <td><?php echo $no++ ?></td>
+                    <td><?php echo $nama_produk ?></td>
+                    <td><?php echo $jumlah ?></td>
+                    <td><?php echo 'RP. '.$harga ?></td>
+                    <td><?php echo 'RP. '.$total_harga ?></td>
                     <td class="add">
                         <a class="btn btn-primary"
-                            href="update-product.php?id_produk=<?php echo $data['id_produk']; ?>"><img
+                            href="update-product.php?id_produk=<?php echo $id_produk; ?>"><img
                                 src="img\lucide_pencil.svg" alt=""></a>
 
                     </td>
