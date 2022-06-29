@@ -28,7 +28,9 @@
 
     <!-- awal tabel transaksi -->
     <div class="row justify-content-center">
+
         <div class="col-sm-11">
+            <!-- ini button sama tanggal -->
             <div class="d-flex justify-content-between mb-3">
                 <div>
                     <?php
@@ -38,28 +40,79 @@
                 </div>
 
                 <div>
-                    <!-- <a href="#" class="btn btn-danger">CONFIRM PAYMENT</a> -->
                     <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">CONFIRM PAYMENT</button>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                        aria-labelledby="offcanvasRightLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasRightLabel">CONFIRM PAYMENT
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                            </button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <td scope="col">Nama Produk</td>
+                                        <td scope="col">Jumlah</td>
+                                        <td scope="col">Total Harga</td>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-group-divider" id="list-transaksi">
+                                    <?php
+                                        include "database/connect.php";
 
-                            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
-                                aria-labelledby="offcanvasRightLabel">
-                                <div class="offcanvas-header">
-                                    <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right
-                                    </h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="offcanvas-body">
-                                    ...
-                                </div>
+                                        $no=1;
+                                        $query = mysqli_query($conn, 'SELECT * FROM tb_temporary');
+                                        while ($data = mysqli_fetch_array($query)) {
+                                            $id_produk = $data['id_produk'];
+                                            $jumlah = $data['jumlah'];
+                                            $total_harga = $data['total_harga'];
+                                            $sql = mysqli_query($conn, "SELECT nama_produk, harga FROM tb_produk WHERE id_produk='".$data['id_produk']."'");
+                                            $data = $sql->fetch_array();
+                                            $nama_produk = $data['nama_produk'];
+                                            $harga = $data['harga'];
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $nama_produk ?></td>
+                                        <td><?php echo $jumlah ?></td>
+                                        <td><?php echo 'RP. '.$total_harga ?></td>
+                                    </tr>
+                                    <?php }?>
+                                    <tr>
+                                        <td colspan="2">TOTAL</td>
+                                        <td>
+                                            <?php
+                                                $query = mysqli_query($conn,"SELECT SUM(total_harga) AS total_bayar FROM tb_temporary");
+                                                $data = $query->fetch_array();
+                                                echo 'RP. '.$data['total_bayar'];
+                                            ?>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div>
+                                <?php 
+                                    $query = mysqli_query($conn,"SELECT SUM(total_harga) AS total_bayar FROM tb_temporary");
+                                    $data = $query->fetch_array();
+                                ?>
+                                <a class="btn btn-primary"
+                                    href="input-penjualan.php?id_produk=<?php echo $data['id_produk']; ?>"><img src=""
+                                        alt="">PAY</a>
                             </div>
-                            <a href="cash-product.php" class="btn btn-primary">ADD</a>
+                        </div>
+                    </div>
+                    <a href="cash-product.php" class="btn btn-primary">
+                        <img src="img\icon-add.svg" alt="">
+                        ADD
+                    </a>
+                </div>
             </div>
-        </div>
-
-        <div class="table table-hover">
-                <table class="table">
+            <!-- ini akhir button sama tanggal -->
+            <!-- ini buat tabel -->
+            <div class="table table-hover">
+                <table class="table table-striped table-hover">
                     <thead>
                         <tr>
                             <td scope="col">No</td>
@@ -70,43 +123,43 @@
                             <td scope="col">Tindakan</td>
                         </tr>
                     </thead>
-                    <tbody id="list-transaksi">
+                    <tbody class="table-group-divider" id="list-transaksi">
                         <?php
-            include "database/connect.php";
+                            include "database/connect.php";
 
-            $no=1;
-            $query = mysqli_query($conn, 'SELECT * FROM tb_temporary');
-            while ($data = mysqli_fetch_array($query)) {
-                $id_temp = $data['id_temp'];
-                $jumlah = $data['jumlah'];
-                $total_harga = $data['total_harga'];
-                $sql = mysqli_query($conn, "SELECT nama_produk, harga FROM tb_produk WHERE id_produk='".$data['id_produk']."'");
-                $data = $sql->fetch_array();
-                $nama_produk = $data['nama_produk'];
-                $harga = $data['harga'];
-            ?>
-                    <tr>
-                        <td><?php echo $no++ ?></td>
-                        <td><?php echo $nama_produk ?></td>
-                        <td><?php echo $jumlah ?></td>
-                        <td><?php echo 'RP. '.$harga ?></td>
-                        <td><?php echo 'RP. '.$total_harga ?></td>
-                        <td class="add">
-                            <a class="btn btn-primary"
-                                href="database/delete-temporary.php?id_temp=<?php echo $id_temp; ?>"><img
-                                src="img\lucide_pencil.svg" alt=""></a>
+                            $no=1;
+                            $query = mysqli_query($conn, 'SELECT * FROM tb_temporary');
+                            while ($data = mysqli_fetch_array($query)) {
+                                $id_produk = $data['id_produk'];
+                                $jumlah = $data['jumlah'];
+                                $total_harga = $data['total_harga'];
+                                $sql = mysqli_query($conn, "SELECT nama_produk, harga FROM tb_produk WHERE id_produk='".$data['id_produk']."'");
+                                $data = $sql->fetch_array();
+                                $nama_produk = $data['nama_produk'];
+                                $harga = $data['harga'];
+                            ?>
+                        <tr>
+                            <td><?php echo $no++ ?></td>
+                            <td><?php echo $nama_produk ?></td>
+                            <td><?php echo $jumlah ?></td>
+                            <td><?php echo 'RP. '.$harga ?></td>
+                            <td><?php echo 'RP. '.$total_harga ?></td>
+                            <td class="add">
+                                <a class="btn" href="update-product.php?id_produk=<?php echo $id_produk; ?>"><img
+                                        src="img\octicon_trash-16.svg" alt="">
+                                </a>
+                            </td>
+                        </tr>
+                        <?php }?>
+                    </tbody>
+                </table>
+            </div>
+            <!-- ini akhir tabel -->
+        </div>
 
-                        </td>
-                    </tr>
-                <?php 
-                    } 
-                ?>
-            </tbody>
-        </table>
-        </div>
-        </div>
-        </div>
+
         <!-- akhir tabel transaksi -->
+    </div>
 
 </body>
 
