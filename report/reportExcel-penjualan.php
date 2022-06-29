@@ -24,8 +24,8 @@ while ($row = mysqli_fetch_array($query)) {
 	$tgl_penjualan =$row['tgl_penjualan'];
     $sql = mysqli_query($conn, "SELECT nama_produk, harga FROM tb_produk WHERE id_produk='".$row['id_produk']."'");
     $row = $sql->fetch_array();
-	$nama_produk = $row['nama_produk']
-	$harga = $row['harga']
+	$nama_produk = $row['nama_produk'];
+	$harga = $row['harga'];
 
 	$sheet->setCellValue('A'.$i, $id_penjualan);
 	$sheet->setCellValue('B'.$i, $kode_transaksi);

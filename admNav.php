@@ -37,9 +37,9 @@
                             Report
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="adm-report.php#Product">Product</a></li>
-                            <li><a class="dropdown-item" href="adm-report.php#Payment">Payment</a></li>
-                            <li><a class="dropdown-item" href="adm-report.php#Print">Print</a></li>
+                            <li><a class="dropdown-item" href="#">Product</a></li>
+                            <li><a class="dropdown-item" href="#">Payment</a></li>
+                            <li><a class="dropdown-item" href="#">Print</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropstart btn-group">

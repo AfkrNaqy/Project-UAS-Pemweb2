@@ -92,15 +92,14 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <div>
-                                <?php 
-                                    $query = mysqli_query($conn,"SELECT SUM(total_harga) AS total_bayar FROM tb_temporary");
-                                    $data = $query->fetch_array();
-                                ?>
-                                <a class="btn btn-primary"
-                                    href="input-penjualan.php?id_produk=<?php echo $data['id_produk']; ?>"><img src=""
-                                        alt="">PAY</a>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">RP</span>
+                                <input type="text" class="form-control" placeholder=""
+                                    aria-label="Example text with button addon" aria-describedby="button-addon1">
+                                <a class="btn btn-outline-secondary" type="button" id="button-addon1"
+                                    href="database/input-penjualan.php">PAY</a>
                             </div>
+
                         </div>
                     </div>
                     <a href="cash-product.php" class="btn btn-primary">
@@ -123,14 +122,14 @@
                             <td scope="col">Tindakan</td>
                         </tr>
                     </thead>
-                    <tbody class="table-group-divider" id="list-transaksi">
+                    <tbody class="table-group-divider">
                         <?php
                             include "database/connect.php";
 
                             $no=1;
                             $query = mysqli_query($conn, 'SELECT * FROM tb_temporary');
                             while ($data = mysqli_fetch_array($query)) {
-                                $id_produk = $data['id_produk'];
+                                $id_temp = $data['id_temp'];
                                 $jumlah = $data['jumlah'];
                                 $total_harga = $data['total_harga'];
                                 $sql = mysqli_query($conn, "SELECT nama_produk, harga FROM tb_produk WHERE id_produk='".$data['id_produk']."'");
@@ -145,7 +144,7 @@
                             <td><?php echo 'RP. '.$harga ?></td>
                             <td><?php echo 'RP. '.$total_harga ?></td>
                             <td class="add">
-                                <a class="btn" href="update-product.php?id_produk=<?php echo $id_produk; ?>"><img
+                                <a class="btn" href="database\delete-temporary.php?id_temp=<?php echo $id_temp; ?>"><img
                                         src="img\octicon_trash-16.svg" alt="">
                                 </a>
                             </td>

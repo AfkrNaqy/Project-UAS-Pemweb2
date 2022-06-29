@@ -24,10 +24,6 @@
     background: #899878;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
 }
-
-.btn-regis {
-    background: #f7f7f2;
-}
 </style>
 
 <body class="body">
