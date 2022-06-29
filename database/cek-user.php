@@ -23,6 +23,7 @@
             session_start();
             $row = mysqli_fetch_assoc($result);
             $_SESSION['username'] = $row['username'];
+            $_SESSION['status'] = "login";
             if ($row["role"] == "Admin") {
                 header("Location: ../adm-home.php");
                 exit();
@@ -33,7 +34,7 @@
             
         }else{
             // memberikan pesan alert ketika user memasukkan username atau password yang salah
-            echo "<script>alert('Username atau password Anda salah. Silahkan coba lagi!')</script>";
+            header("location:../form-login.php?pesan=gagal");
         }
     }
 ?>

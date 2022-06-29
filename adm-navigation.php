@@ -46,7 +46,7 @@
                         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start"
                             aria-labelledby="navbarDropdownMenuLink">
                             <li class="">
-                                <a class="dropdown-item" href="#">Logout</a>
+                                <a class="dropdown-item" href="logout.php">Logout</a>
                             </li>
                         </ul>
                     </li>
