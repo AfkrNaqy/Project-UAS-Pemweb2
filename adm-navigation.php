@@ -10,9 +10,9 @@
 
 <body>
     <?php session_start(); ?>
-    <nav class="navbar navbar-expand-lg bg-transparent">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+    <nav class="navbar navbar-expand-lg bg-transparent ">
+        <div class="container-fluid mx-2">
+            <a class="navbar-brand ms-2" href="#"><img src="img\logo.png" alt="" width=55px height=45px></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -38,7 +38,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="adm-report.php#Product">Product</a></li>
-                            <li><a class="dropdown-item" href="adm-report.php#Payment">Sales</a></li>
+                            <li><a class="dropdown-item" href="adm-report.php#Sales">Sales</a></li>
                             <li><a class="dropdown-item" href="adm-report.php#Print">Print</a></li>
                         </ul>
                     </li>

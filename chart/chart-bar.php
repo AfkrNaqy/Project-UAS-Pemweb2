@@ -1,6 +1,6 @@
 <?php
 //integrasi koneksi
-include 'database/connect.php';
+include '../database/connect.php';
 
 //membuat variabel penampung data tabel
 $produk = mysqli_query($conn, "SELECT * FROM tb_produk");

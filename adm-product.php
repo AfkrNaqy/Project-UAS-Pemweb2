@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ADM - Product</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
@@ -30,8 +30,8 @@
     <?php session_start(); ?>
     <!-- ini navbar -->
     <nav class="navbar navbar-expand-lg bg-transparent">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+        <div class="container-fluid mx-2">
+            <a class="navbar-brand ms-2" href="#"><img src="img\logo.png" alt="" width=55px height=45px></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -56,9 +56,9 @@
                             Report
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Product</a></li>
-                            <li><a class="dropdown-item" href="#">Payment</a></li>
-                            <li><a class="dropdown-item" href="#">Print</a></li>
+                            <li><a class="dropdown-item" href="adm-report.php#Product">Product</a></li>
+                            <li><a class="dropdown-item" href="adm-report.php#Payment">Payment</a></li>
+                            <li><a class="dropdown-item" href="adm-report.php#Print">Print</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropstart btn-group">
@@ -81,12 +81,38 @@
         </div>
     </nav>
     <!-- ini akhir navbar -->
-    <!-- ini untuk tombol search dll -->
-    <div class="act"></div>
+
     <!-- ini untuk searach dan button tambah -->
     <div class="row justify-content-center">
         <div class="col-sm-11">
+            <div class="d-flex justify-content-between my-2">
+                <div>
+                    <h4>PRODUK</h4>
+                </div>
+                <div class="d-flex">
+                    <form action="adm-product.php" method="get">
+                        <div class="input-group">
+                            <input type="text" name="cari" class="form-control" placeholder="Search"
+                                aria-label="Example text with button addon" aria-describedby="button-addon1">
+                            <button class="btn btn-outline-secondary bg-primary" type="submit" id="button-addon1"><img
+                                    type="submit" src="img\icon-search-white.png" width=20px height=20px alt="">
+                            </button>
+
+                        </div>
+                    </form>
+                    <a href="adm-addProduct.php" class="btn btn-primary ms-3">
+                        <img src="img\icon-add-white.svg" alt="">
+                        ADD
+                    </a>
+                </div>
+            </div>
             <div class="table table-hover">
+                <?php
+                    include "database/connect.php";
+                    if(isset($_GET['cari'])){
+                        $cari = $_GET['cari'];
+                    }
+                ?>
                 <table class="table table-striped table-hover">
                     <thead>
                         <tr>
@@ -99,9 +125,12 @@
                     </thead>
                     <tbody class="table-group-divider">
                         <?php
-                            include "database/connect.php";
-
-                            $query = mysqli_query($conn, 'SELECT * FROM tb_produk');
+                            if(isset($_GET['cari'])){
+                                $cari = $_GET['cari'];
+                                $query = mysqli_query($conn,"SELECT * from tb_produk where nama_produk like '%".$cari."%'");				
+                            }else{
+                                $query = mysqli_query($conn,"SELECT * from tb_produk");		
+                            }
                             while ($data = mysqli_fetch_array($query)) {
                         ?>
                         <tr>
@@ -110,10 +139,10 @@
                             <td><?php echo $data['jumlah_stok'] ?></td>
                             <td><?php echo 'RP. '.$data['harga'] ?></td>
                             <td class="update">
-                                <a class="btn btn-primary"
+                                <a class="btn" style="background: rgba(111, 255, 99, 0.65);"
                                     href="adm-updateProduct.php?id_produk=<?php echo $data['id_produk']; ?>"><img
                                         src="img\lucide_pencil.svg" alt=""></a>
-                                <a class="btn btn-primary"
+                                <a class="btn" style="background: rgba(255, 117, 117, 0.65);"
                                     href="database/delete-produk.php?id_produk=<?php echo $data['id_produk']; ?>"><img
                                         src="img\octicon_trash-16.svg" alt=""></a>
                             </td>
@@ -130,7 +159,7 @@
     <!-- ini untuk tabel product -->
 
 
-    <a href="adm-addProduct.php" class="btn btn-primary">Tambah Data</a>
+
 </body>
 
 </html>

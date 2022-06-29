@@ -58,10 +58,10 @@
                             <td><?php echo $data['username'] ?></td>
                             <td><?php echo $data['password'] ?></td>
                             <td class="update">
-                                <a class="btn btn-primary m-1"
+                                <a class="btn m-1" style="background: rgba(111, 255, 99, 0.65);"
                                     href="adm-updateUser.php?id_user=<?php echo $data['id_user']; ?>"><img
                                         src="img\lucide_pencil.svg" alt=""></a>
-                                <a class="btn btn-primary m-1"
+                                <a class="btn m-1" style="background: rgba(255, 117, 117, 0.65);"
                                     href="database/delete-user.php?id_user=<?php echo $data['id_user']; ?>"><img
                                         src="img\octicon_trash-16.svg" alt=""></a>
                             </td>

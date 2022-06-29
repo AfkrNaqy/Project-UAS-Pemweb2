@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cash Home</title>
+    <title>Cash - Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
 </head>
@@ -34,8 +34,9 @@
             <div class="d-flex justify-content-between mb-3">
                 <div>
                     <?php
-                        // date_default_timezone_set("Asia/Jakarta");
-                        echo "Date\t".date("m-F-Y");
+                        date_default_timezone_set("Asia/Jakarta");
+                        echo "Date\t".date("d-F-Y H:i:s");
+                        
                     ?>
                 </div>
 
@@ -103,7 +104,7 @@
                         </div>
                     </div>
                     <a href="cash-product.php" class="btn btn-primary">
-                        <img src="img\icon-add.svg" alt="">
+                        <img src="img\icon-add-white.svg" alt="">
                         ADD
                     </a>
                 </div>

@@ -1,6 +1,6 @@
 <?php
-include('database/koneksi.php');
-require 'assets/exportexcel/vendor/autoload.php';
+include('../database/connect.php');
+require '../assets/exportexcel/vendor/autoload.php';
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
@@ -50,4 +50,6 @@ $styleArray = [
 	$writer = new xlsx($spreadsheet);
 	$writer->save('Report Data Penjualan.xlsx');
 
+header("location: ../adm-Home.php");
+exit();
 ?>
