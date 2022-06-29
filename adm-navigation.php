@@ -38,7 +38,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="adm-report.php#Product">Product</a></li>
-                            <li><a class="dropdown-item" href="adm-report.php#Payment">Payment</a></li>
+                            <li><a class="dropdown-item" href="adm-report.php#Payment">Sales</a></li>
                             <li><a class="dropdown-item" href="adm-report.php#Print">Print</a></li>
                         </ul>
                     </li>
