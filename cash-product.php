@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cash Produk</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
     </script>
+    <link rel="stylesheet" href="assets/script.js" type="text/javascript">
 </head>
 
 <body>
@@ -45,15 +46,14 @@
             while ($data = mysqli_fetch_array($query)) {
             ?>
                 <tr>
-                    <td><?php echo $data['id_produk'] ?></td>
-                    <td><?php echo $data['nama_produk'] ?></td>
-                    <td><?php echo $data['jumlah_stok'] ?></td>
-                    <td><?php echo 'RP. '.$data['harga'] ?></td>
+                    <td id="idProduk"><?php echo $data['id_produk'] ?></td>
+                    <td id="namaProduk"><?php echo $data['nama_produk'] ?></td>
+                    <td class="inputJml" id="jmlBeli">
+                        <span><input type="number" class="num" value="0" min="0"></span>
+                    </td>
+                    <td id="hargaProduk"><?php echo 'RP. '.$data['harga'] ?></td>
                     <td class="add">
-                        <a class="btn btn-primary"
-                            href="database\temp-produk.php?id_produk=<?php echo $data['id_produk']; ?>"><img
-                                src="img\lucide_pencil.svg" alt=""></a>
-
+                        <a class="btn btn-primary" onclick="addProduk()"><img src="img\lucide_pencil.svg" alt=""></a>
                     </td>
                 </tr>
                 <?php 
@@ -61,6 +61,7 @@
         ?>
             </tbody>
         </table>
+
     </div>
 
 </body>

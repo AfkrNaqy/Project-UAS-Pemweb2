@@ -7,14 +7,15 @@
 </script>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-light">
+    <?php session_start(); ?>
+    <nav class="navbar navbar-expand-lg bg-transparent">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="cash-home.php">Home</a>
@@ -24,10 +25,20 @@
                         <a class="nav-link" href="cash-product.php">Product</a>
                     </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#"><img src="img/person_account.svg" alt="">
-
-                        </a>
+                    <li class="nav-item dropstart btn-group">
+                        <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img
+                                src="img/person_account.svg" alt="" /> </a>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start"
+                            aria-labelledby="navbarDropdownMenuLink">
+                            <li class="dropdown-item-text">
+                                <h5>Cashier</h5>
+                                <p> <?php echo $_SESSION['username']; ?> </p>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">Logout</a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </div>

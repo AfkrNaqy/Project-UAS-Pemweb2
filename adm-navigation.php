@@ -7,7 +7,9 @@
 </script>
 
 
+
 <body>
+    <?php session_start(); ?>
     <nav class="navbar navbar-expand-lg bg-transparent">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Navbar</a>
@@ -15,7 +17,7 @@
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse position-absolute end-0 me-4" id="navbarNavDropdown">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="#">Home</a>
@@ -45,7 +47,12 @@
                                 src="img/person_account.svg" alt="" /> </a>
                         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start"
                             aria-labelledby="navbarDropdownMenuLink">
-                            <li class="">
+                            <li class="dropdown-item-text">
+                                <h5>Admin</h5>
+                                <p> <?php echo $_SESSION['username']; ?> </p>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
                                 <a class="dropdown-item" href="#">Logout</a>
                             </li>
                         </ul>

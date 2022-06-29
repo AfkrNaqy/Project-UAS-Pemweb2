@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cash Home</title>
 </head>
 
 <body>
@@ -23,10 +23,9 @@
                     <td scope="col">Tindakan</td>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="list-transaksi">
                 <?php
             include "database/connect.php";
-            include "database/temp-produk.php";
 
             // $query = mysqli_query($conn, 'SELECT * FROM tb_produk');
             for ($i=0; $i < count($produk); $i++) { 
