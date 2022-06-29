@@ -99,6 +99,7 @@
                                 <a class="btn btn-outline-secondary" type="button" id="button-addon1"
                                     href="database/input-penjualan.php">PAY</a>
                             </div>
+
                         </div>
                     </div>
                     <a href="cash-product.php" class="btn btn-primary">
@@ -144,7 +145,7 @@
                             <td><?php echo 'RP. '.$total_harga ?></td>
                             <td class="add">
                                 <a class="btn" href="database/delete-temporary.php?id_temp=<?php echo $id_temp; ?>"><img
-                                        src="img\octicon_trash-16.svg" alt="">
+                                        src="img/octicon_trash-16.svg" alt="">
                                 </a>
                             </td>
                         </tr>
