@@ -144,8 +144,8 @@
                             <td><?php echo 'RP. '.$harga ?></td>
                             <td><?php echo 'RP. '.$total_harga ?></td>
                             <td class="add">
-                                <a class="btn" href="database\delete-temporary.php?id_temp=<?php echo $id_temp; ?>"><img
-                                        src="img\octicon_trash-16.svg" alt="">
+                                <a class="btn" href="database/delete-temporary.php?id_temp=<?php echo $id_temp; ?>"><img
+                                        src="img/octicon_trash-16.svg" alt="">
                                 </a>
                             </td>
                         </tr>
