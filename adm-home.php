@@ -146,12 +146,13 @@
 
                             $query = mysqli_query($conn, 'SELECT DISTINCT pj.id_produk, pj.jumlah, pj.tgl_penjualan,pj.jumlah,pj.total_harga,pr.nama_produk 
                             FROM tb_penjualan pj JOIN tb_produk pr  ON(pj.id_produk = pr.id_produk)');
+                            $no=1;
                             while ($data = mysqli_fetch_array($query)) {
                                 $jml = mysqli_query($conn,'SELECT SUM(jumlah) as "jmlTotal" from tb_penjualan where id_produk='.$data['id_produk']);
                                 $row = mysqli_fetch_array($jml);
                         ?>
                             <tr>
-                                <td><?php echo $data['id_produk'] ?></td>
+                                <td><?php echo $no++ ?></td>
                                 <td><?php echo $data['tgl_penjualan'] ?></td>
                                 <td><?php echo $data['nama_produk'] ?></td>
                                 <td><?php echo $row['jmlTotal'] ?></td>
